@@ -31,7 +31,7 @@ try {
 const config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/omnivoo-logo.png',
 
   future: {
     v4: true,
@@ -90,7 +90,7 @@ const config = {
         title: 'My Site',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          src: 'img/omnivoo-logo.png',
         },
         items: [
           {
