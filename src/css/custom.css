@@ -4,27 +4,79 @@
  * work well for content-centric websites.
  */
 
+/* Brand fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Source+Code+Pro:wght@400;500;600;700&display=swap');
+
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  /* Omnivoo brand */
+  --omnivoo-brand: #03d47c; /* exact */
+  --omnivoo-deep: #0f5d47; /* deep green background approx from mock */
+
+  /* Primary palette uses exact brand for consistency */
+  --ifm-color-primary: var(--omnivoo-brand);
+  --ifm-color-primary-dark: #02b86c;
+  --ifm-color-primary-darker: #029f5f;
+  --ifm-color-primary-darkest: #017f4d;
+  --ifm-color-primary-light: #1fe093;
+  --ifm-color-primary-lighter: #4ce8ab;
+  --ifm-color-primary-lightest: #8ff3ce;
+
+  /* Navbar white, hero background brand color, footer deep */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-footer-background-color: var(--omnivoo-deep);
+  --ifm-hero-background-color: var(--omnivoo-brand);
+  --ifm-navbar-link-color: #0f5d47;
+  --ifm-navbar-link-hover-color: var(--omnivoo-brand);
+
+  /* Typography */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --ifm-font-family-monospace: 'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Keep exact brand tone in dark theme too */
+  --ifm-color-primary: var(--omnivoo-brand);
+  --ifm-color-primary-dark: #02b86c;
+  --ifm-color-primary-darker: #029f5f;
+  --ifm-color-primary-darkest: #017f4d;
+  --ifm-color-primary-light: #1fe093;
+  --ifm-color-primary-lighter: #4ce8ab;
+  --ifm-color-primary-lightest: #8ff3ce;
+  --ifm-hero-background-color: var(--omnivoo-brand);
+  --ifm-footer-background-color: var(--omnivoo-deep);
+  --ifm-navbar-background-color: #1b1b1d;
+  --docusaurus-highlighted-code-line-bg: rgba(3, 212, 124, 0.1);
+}
+
+/* Headings use IBM Plex Serif */
+h1, h2, h3, h4, h5, h6, .hero__title {
+  font-family: 'IBM Plex Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+/* Optional: make hero subtitle/body use Inter explicitly */
+body, .hero__subtitle {
+  font-family: var(--ifm-font-family-base);
+}
+
+/* Monospace font for inline code and code blocks */
+code, pre, kbd, samp {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Ensure hero text is white like the mock */
+.hero--primary {
+  --ifm-hero-text-color: #ffffff;
+}
+
+/* Footer/link colors for contrast on deep background */
+footer.footer {
+  color: #ffffff;
+}
+footer.footer a {
+  color: #e6fff5;
 }
